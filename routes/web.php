@@ -14,3 +14,35 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//ページ公開用
+$html = <<<EOF
+<html>
+<head>
+<title>
+Hello world!
+</title>
+<style>
+body {
+    font-size: 16pt;
+    color: #999;
+}
+h1{
+    font-size: 100pt;
+    text-align: right;
+    color: #eee;
+    margin: -40px 0px -50px 0px;
+}
+</style>
+</head>
+<body>
+<h1>Hello,world!</h1>
+<p>This is Sample page.</p>
+</body>
+</html>
+EOF;
+
+
+route::get('hello' , function() use($html){
+    return $html;
+});
